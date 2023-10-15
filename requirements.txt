@@ -4,7 +4,7 @@
 # tensorflow
 # tensorflow_hub
 python==3.8.5
-gunicorn 
+# gunicorn 
 absl-py==2.0.0
 astunparse==1.6.3
 blinker==1.6.3
