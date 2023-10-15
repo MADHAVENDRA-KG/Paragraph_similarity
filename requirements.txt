@@ -3,6 +3,7 @@ numpy
 pandas
 tensorflow
 tensorflow_hub
+gunicorn
 # python==3.8.5
 # # gunicorn 
 # absl-py==2.0.0
