@@ -52,10 +52,10 @@ def prediction():
     print(message_embeddings)
     a = tf.make_ndarray(tf.make_tensor_proto(message_embeddings))
     cos_sim = dot(a[0], a[1])/(norm(a[0])*norm(a[1]))
-    
-
+    #to make cos_sim between 0 to 1
+    cos_sim=cos_sim+1
     # Perform inference with the loaded model
-    results = cos_sim
+    results = cos_sim/2
     print(results)
     
     return {"similarity score":str(results)}
@@ -78,7 +78,9 @@ def predict():
     print(message_embeddings)
     a = tf.make_ndarray(tf.make_tensor_proto(message_embeddings))
     cos_sim = dot(a[0], a[1])/(norm(a[0])*norm(a[1]))
-    results = cos_sim
+    cos_sim=cos_sim+1
+    results = cos_sim/2
+    
     print(results)
     res={"similarity score":str(results)}
     return render_template("home.html",prediction_text="Similary in text1 and text2 is {output}".format(output=results))
